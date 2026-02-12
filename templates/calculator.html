@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page">
+<h1>🧱 Brick Calculator For Wall</h1>
+
+<div class="container">
+
+<div class="left">
+    <h3>Brick Size</h3>
+    <img src="{{ url_for('static', filename='images/brick_size.jpeg') }}" alt="Brick Size" class="diagram">
+    <input id="brick_length" placeholder="Brick Length" type="number" step="0.1">
+    <input id="brick_height" placeholder="Brick Height" type="number" step="0.1">
+    <input id="brick_width" placeholder="Brick Width" type="number" step="0.1">
+
+    <select id="brick_unit">
+        <option value="cm">cm</option>
+        <option value="mm">mm</option>
+        <option value="m">m</option>
+        <option value="ft">ft</option>
+        <option value="in">in</option>
+    </select>
+
+    <h3 style="margin-top: 30px;">Exact Wall Size</h3>
+    <img src="{{ url_for('static', filename='images/wall_size.png') }}" alt="Wall Size Diagram" class="diagram">
+
+    <input id="wall_length" placeholder="Wall Length" type="number" step="0.1">
+    <input id="wall_height" placeholder="Wall Height" type="number" step="0.1">
+
+    <select id="wall_unit">
+        <option value="cm">cm</option>
+        <option value="mm">mm</option>
+        <option value="m">m</option>
+        <option value="ft">ft</option>
+        <option value="in">in</option>
+    </select>
+
+    <select id="thickness">
+        <option value="1">1 Brick</option>
+        <option value="2">2 Bricks</option>
+    </select>
+
+    <input id="price" placeholder="Price per Brick ₹" type="number" step="0.01">
+
+    <button class="calc-btn" onclick="calculate()">Calculate</button>
+
+</div>
+
+<div class="right">
+    <h3>Results</h3>
+    
+    <div>
+        <h3 style="color: white; font-size: 14px; border: none; margin-top: 0;">Total Bricks Needed</h3>
+        <p id="bricks">-</p>
+    </div>
+
+    <div>
+        <h3 style="color: white; font-size: 14px; border: none;">Total Cost</h3>
+        <p id="cost">₹ -</p>
+    </div>
+
+    <div id="steps"></div>
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}

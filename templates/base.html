@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HAK Brick Company - Professional Brick Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🧱 HAK Brick Company</div>
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/calculator">Calculator</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer style="background: #1a237e; color: white; text-align: center; padding: 30px; margin-top: 50px;">
+    <p>&copy; 2026 HAK Brick Company. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

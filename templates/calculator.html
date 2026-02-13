@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Brick Calculator</h1>
+
+<div class="container">
+
+<div class="left">
+
+<h3>Brick Details</h3>
+<img src="{{ url_for('static', filename='images/brick.png') }}" width="250">
+<input id="brick_length" placeholder="Brick Length">
+<input id="brick_height" placeholder="Brick Height">
+<input id="brick_width" placeholder="Brick Width">
+
+<select id="brick_unit">
+    <option value="cm">cm</option>
+    <option value="mm">mm</option>
+    <option value="m">m</option>
+    <option value="ft">ft</option>
+    <option value="in">in</option>
+</select>
+
+<h3>Wall Details</h3>
+<img src="{{ url_for('static', filename='images/brick.png') }}" width="250">
+<input id="wall_length" placeholder="Wall Length">
+<input id="wall_height" placeholder="Wall Height">
+
+<select id="wall_unit">
+    <option value="cm">cm</option>
+    <option value="mm">mm</option>
+    <option value="m">m</option>
+    <option value="ft">ft</option>
+    <option value="in">in</option>
+</select>
+
+<label>Wall Thickness</label>
+<select id="thickness">
+    <option value="1">1 Brick</option>
+    <option value="2">2 Bricks</option>
+    <option value="3">3 Bricks</option>
+</select>
+
+<input id="price" placeholder="Price per Brick ₹">
+
+<button onclick="calculate()">Calculate</button>
+
+</div>
+
+<div class="right">
+<h3>Total Bricks</h3>
+<p id="bricks">-</p>
+
+<h3>Total Cost</h3>
+<p id="cost">₹ -</p>
+
+<h3>Calculation Details</h3>
+<div id="steps"></div>
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}
